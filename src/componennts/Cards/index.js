@@ -59,10 +59,12 @@ function Cards() {
     });
   }, []);
 
+  
+
   return (
     <>
       <Container>
-        <Form className="py-1 my-5 mx-auto d-flex justify-content-center">
+        {/* <Form className="py-1 my-5 mx-auto d-flex justify-content-center">
           <label className="ps-4 pe-2">User Id: </label>
           <input
             type="number"
@@ -90,26 +92,26 @@ function Cards() {
           >
             add
           </Button>
-        </Form>
+        </Form> */}
 
         <Table striped>
           <thead>
             <tr>
               <th>Id</th>
-              <th>User userId</th>
+              <th>userId</th>
               <th>title</th>
               <th>body</th>
             </tr>
           </thead>
           <tbody>
-            {users.map(({ id, title, body, userId }) => (
+            {users.map(({ id,userId, title, body}) => (
               <tr key={id}>
                 <td>{id}</td>
                 <td>{userId}</td>
                 <td>{title}</td>
                 <td>{body.lengt < 65 ? body : body.slice(0, 65)}</td>
                 <td>
-                  <Button  variant="primary">Go somewhere</Button>
+                  <Button  variant="primary">comments</Button>
                 </td>
               </tr>
             ))}
